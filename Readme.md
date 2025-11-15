@@ -1,5 +1,26 @@
 # 🚁 ArduPilot ROS2 Docker Environment
 
+## Quick setup
+
+cd ros2_ws
+rm -rf src/micro_ros_agent
+colcon build --executor sequential
+
+pip install mavproxy
+sudo apt update
+sudo apt install mavros mavros-extras mavros-msgs
+sudo chmod +x /opt/ros/humble/lib/mavros/install_geographiclib_datasets.sh
+/opt/ros/humble/lib/mavros/install_geographiclib_datasets.sh
+
+## Run
+ros2 launch ardupilot_gz_bringup iris_runway.launch.py
+
+ros2 launch mavros apm.launch fcu_url:=udp://127.0.0.1:14551@14555
+
+python3 /home/ros/ros2_ws/src/drone_control/mode_test.py
+
+## About
+
 <div align="center">
 
 
