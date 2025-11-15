@@ -3,7 +3,7 @@
 ## Quick setup
 ```
 docker pull ghcr.io/jagadeesh-pradhani/ros2_ardupilot_iris_docker:main
-docker run --gpus all   --network host   --privileged   --runtime=nvidia   -v /tmp/.X11-unix:/tmp/.X11-unix:rw  -v /dev:/dev -e DISPLAY=$DISPLAY   --name ardupilot-dev-base -it ardupilot/ardupilot-dev-base  bash
+docker run --gpus all   --network host   --privileged   --runtime=nvidia   -v /tmp/.X11-unix:/tmp/.X11-unix:rw  -v /dev:/dev -e DISPLAY=$DISPLAY   --name drone_swarm -it ghcr.io/jagadeesh-pradhani/ros2_ardupilot_iris_docker:main bash
 docker exec -it drone_swarm bash
 
 cd ros2_ws
