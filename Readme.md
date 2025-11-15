@@ -8,6 +8,7 @@ docker exec -it drone_swarm bash
 
 cd ros2_ws
 rm -rf src/micro_ros_agent
+export MAKEFLAGS="-j 2"
 colcon build --executor sequential
 
 pip install mavproxy
